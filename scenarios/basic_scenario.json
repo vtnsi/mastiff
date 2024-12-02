@@ -1,0 +1,46 @@
+{
+    "environment": 
+    {
+        "num_channels": 10,
+        "max_steps": 10,
+	    "action_mode": "power"
+    },
+    "signals":
+    {
+        "bkgd_sig_001":
+        {
+            "type": "WiFi",
+            "protocol": "wifi",
+            "modulation": null, 
+            "power": 15,
+            "f0": 2.412e9, 
+            "t0": 0.003,  
+            "hop": false, 
+            "hop_hold": 5        
+        }
+    },
+    "spectrums":
+    {
+        "bkgd":
+        {
+            "type": "Spectrum",
+            "signal_list":[
+                "bkgd_sig_001"
+            ],
+            "observation_bandwidth": 100e6,
+            "observation_carrier": 2.45e9,
+            "observation_duration": 0.05,
+            "noise_power_dB": -20.0,
+            "power_lower_bound": -110.0,
+            "power_upper_bound": -30.0,
+            "seed": null
+        }
+    },
+    "render":
+    {
+        "render_mode": "pyqt",
+        "render_fps": 100,
+        "render_history": 20,
+        "render_background": "black"
+    }
+}

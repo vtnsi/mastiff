@@ -1,0 +1,86 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+path = "src/rfrl_gym/__init__.py"
+
+[tool.hatch.build]
+directory = "build"
+
+[tool.hatch.build.target.sdist.force-include]
+"scripts/dataset_gen.py" = "src/datagen/_scripts/dataset_gen.py"
+
+[tool.hatch.build.target.wheel.force-include]
+"scripts/dataset_gen.py" = "src/datagen/_scripts/dataset_gen.py"
+
+[tool.hatch.build.targets.sdist]
+ignore-vcs = true
+include = [
+    "src/*"
+]
+exclude = [
+    "__pycache__"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/rfrl_gym",
+    "src/datagen",
+    "src/detection"
+]
+sources = [ "src" ]
+
+[project]
+name = "rfrl-gym"
+requires-python = ">=3.8"
+readme = {file="README.md", content-type = "text/markdown"}
+dynamic = ["version"]
+dependencies = [
+    "gymnasium",
+    "numpy<2.0",
+    "pyyaml",
+    "matplotlib",
+    "seaborn",
+    "pytest",
+    "pytest-cov",
+    "crccheck",
+    "argparse",
+    "distinctipy",
+    "pyqtgraph",
+    "pyqt6",
+    "tqdm",
+    "scipy",
+    "torch",
+    "torchvision",
+    "opencv-python",
+    "sphinx",
+    "sphinx-rtd-theme",
+    "mako",
+    "jsonschema",
+    "pygobject",
+    "pycairo",
+    "pyqt5",
+    "swig",
+    "pybind11",
+    "rich",
+    "stable_baselines3",
+    "stable_baselines3[extra]"
+]
+authors = [
+    {name = 'Virginia Tech National Security Institute and Morehouse College'},
+    {name = "Alyse M. Jones (Coulon)"},
+    {name = "William \"Chris\" Headley"},
+    {name = "Maymoonah Toubeh"},
+    {name = "Bill Clark"}
+]
+maintainers = [
+    {name = "Alyse M. Jones (Coulon)"}
+]
+[project.scripts]
+dataset_generator="datagen._scripts.dataset_gen:main"
+dataset_pruner="datagen._scripts.label_purge:main"
+
+[tool.hatch.envs.enhanced]
+features = [ "rl_packages" ]

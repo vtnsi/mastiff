@@ -1,0 +1,9 @@
+.env
+*__pycache__*
+*.pt
+wifi_phy_hier*
+liquid-tweaked/
+.vscode/
+liquid.cpython-310-x86_64-linux-gnu.so
+*.png
+*.zip

@@ -1,0 +1,19 @@
+{
+    "environment": 
+    {
+	    "num_channels": 10,
+	    "max_steps": 100,
+	    "observation_mode": "detect",
+        "reward_mode": ""
+    },
+    "entities": 
+    {
+    },
+    "render":
+    {
+        "render_mode": "null",
+        "render_fps": 20,
+        "render_history": 20,
+        "render_background": "black"
+    }
+}

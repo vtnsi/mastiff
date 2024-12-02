@@ -1,0 +1,89 @@
+{
+    "signals":[
+        "ble",
+        "wifi",
+        "zigbee"
+    ],
+    "ble":{
+        "protocol":"ble",
+        "modulation":-1,
+        "f0": {"items":
+                [2402e6, 2404e6, 2406e6, 2408e6, 2410e6, 2412e6, 2414e6, 2416e6, 2418e6, 2420e6, 2422e6,
+                2424e6, 2426e6, 2428e6, 2430e6, 2432e6, 2434e6, 2436e6, 2438e6, 2440e6, 2442e6, 2444e6,
+                2446e6, 2448e6, 2450e6, 2452e6, 2454e6, 2456e6, 2458e6, 2460e6, 2462e6, 2464e6, 2466e6,
+                2468e6, 2470e6, 2472e6, 2474e6, 2476e6, 2478e6, 2480e6]
+              },
+        "relative_gain": {
+            "min": -10.0,
+            "max":  40.0,
+            "scale": "linear"
+        },
+        "t0": {
+            "min": 0.001,
+            "max": 0.01,
+            "scale": "linear"
+        },
+        "period": 625e-6,
+        "hop": true,
+        "hop_hold": 1,
+        "max_count": 1,
+        "inflate_bbox": [0.0078125,30000]
+    },
+    "wifi":{
+        "protocol":"wifi",
+        "modulation":-1,
+        "f0": {"items":
+                [2412e6, 2417e6, 2422e6, 2427e6, 2432e6,
+                2437e6, 2442e6, 2447e6, 2452e6, 2457e6,
+                2462e6]
+              },
+        "relative_gain": {
+            "min": -10.0,
+            "max":  40.0,
+            "scale": "linear"
+        },
+        "t0": {
+            "min": 0.001,
+            "max": 0.01,
+            "scale": "linear"
+        },
+        "period": {
+            "min": 0.006,
+            "max": 0.02,
+            "scale": "linear"
+        },
+        "hop": false,
+        "max_count": 3
+    },
+    "zigbee":{
+        "protocol":"zigbee",
+        "modulation":-1,
+        "f0": {"items":
+                [2405e6, 2410e6, 2415e6, 2420e6, 2425e6, 2430e6, 2435e6, 2440e6, 2445e6, 2450e6, 2455e6]
+              },
+        "relative_gain": {
+            "min": -10.0,
+            "max":  40.0,
+            "scale": "linear"
+        },
+        "t0": {
+            "min": 0.001,
+            "max": 0.01,
+            "scale": "linear"
+        },
+        "period": {
+            "min": 0.006,
+            "max": 0.02,
+            "scale": "linear"
+        },
+        "hop": false,
+        "max_count": 3
+    },
+    "Notes":[
+        {"inflate_bbox":[
+            "idx0: increase beyond bandwidth, box width increases by 2x this",
+            "------- this is a ratio so bw=1.0 means box is full sample rate",
+            "idx1: increase beyond time bounds, box height increase by 2x this in time"
+        ]}
+    ]
+}
