@@ -38,7 +38,7 @@ requires-python = ">=3.8"
 readme = {file="README.md", content-type = "text/markdown"}
 dynamic = ["version"]
 dependencies = [
-    "gymnasium",
+    "gymnasium<1.0",
     "numpy<2.0",
     "pyyaml",
     "matplotlib",
