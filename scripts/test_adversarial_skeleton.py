@@ -8,7 +8,7 @@ import sys
 sys.path.insert(0, './src/detection')
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-s', '--scenario', default='wifi_scenario.json', type=str, help='The scenario file to preview in the RFRL gym environment.')
+parser.add_argument('-s', '--scenario', default='basic_scenario.json', type=str, help='The scenario file to preview in the RFRL gym environment.')
 parser.add_argument('-m', '--gym_mode', default='adversarial', type=str, help='Which type of RFRL gym environment to run.')
 parser.add_argument('-e', '--epochs', default=5, type=int, help='Number of training epochs. (def: %(default)s)')
 args = parser.parse_args()
